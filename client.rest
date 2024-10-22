@@ -1,0 +1,63 @@
+@baseUrl = http://localhost:3000 
+
+### MESSAGES
+### Todas as messages
+# @name MessagesController
+GET {{baseUrl}}/messages/
+
+### Um Message por id
+GET  {{baseUrl}}/messages/15/
+
+### Cria Um Message 
+POST  {{baseUrl}}/messages/
+Content-Type: application/json
+        
+{
+ "texto" : "Ultimo teste do dia",
+ "deId" : 11, 
+ "paraId" : 15
+}
+
+### Editando um dado
+PATCH  {{baseUrl}}/messages/2/
+Content-Type: application/json
+
+{     
+ "texto" :"Editando",
+ "lido": false,
+}
+
+
+### Deletando um dado por ID
+DELETE   {{baseUrl}}/messages/6/
+
+
+### A PARTIR DAQUI É REQUISIÇÕES DA TABELA PESSOA 
+# @name PessoasController
+GET {{baseUrl}}/pessoas/
+
+### Um pessoa por id
+GET  {{baseUrl}}/pessoas/11/
+
+### Cria Um pessoa 
+POST  {{baseUrl}}/pessoas/
+Content-Type: application/json
+        
+{
+ "email" : "Joaoaoao@funcieona.com",
+ "password" : "123456", 
+ "nome" : "blalalala"
+}
+
+
+### Editando um dado
+PATCH  {{baseUrl}}/pessoas/11/
+Content-Type: application/json
+
+{     
+ "password": "aaaaaa"
+}
+
+
+### Deletando um dado por ID
+DELETE   {{baseUrl}}/pessoas/3/
